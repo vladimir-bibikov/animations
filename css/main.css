@@ -1,0 +1,165 @@
+.wrap {
+  position: relative;
+
+  width: 800px;
+  height: 700px;
+  margin: 20px auto;
+  border: 5px solid pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.smurf {
+  position: absolute;
+  left: -50px;
+
+  width: 71px;
+  height: 123px;
+  background-image: url("../images/smur-sprite.png");
+  animation: go 0.3s steps(16) infinite, step 3s linear infinite;
+}
+
+
+@keyframes go {
+  100% {
+    background-position: -1136px;
+}
+}
+
+@keyframes step {
+  100% {
+    left: 850px
+  }
+}
+
+.watch {
+  position: relative;
+
+  width: 410px;
+  height: 410px;
+  border: 24px solid #2a363b;
+  border-radius: 50%;
+  box-shadow: 10px 5px 13px 8px rgba(99,75,83,0.5);
+}
+
+.minute {
+  position: absolute;
+  bottom: 205px;
+  left: 198px;
+
+  width: 14px;
+  height: 140px;
+  background-color: #2a363b;
+  border-radius: 10px;
+  box-shadow: 4px 4px 5px 1px rgba(59, 37, 19, 0.62);
+
+  transform-origin: center bottom;
+  animation: watch 3600s steps(60) infinite;
+}
+
+.second {
+  position: absolute;
+  bottom: 205px;
+  left: 198px;
+
+  width: 12px;
+  height: 200px;
+  background-color: #cb540a;
+  border: 2px solid #2a363b;
+  border-radius: 10px;
+  box-shadow: 5px 5px 13px 4px rgba(24, 19, 7, 0.72);
+
+  transform-origin: center bottom;
+  animation: watch 60s steps(60) infinite;
+}
+
+.center {
+  position: absolute;
+  top: 190px;
+  left: 190px;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  background-color: #2a363b;
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.doors {
+  perspective: 1000px;
+}
+
+.door {
+  width: 300px;
+  height: 200px;
+  background-color: #960a0a;
+  border: 5px solid #500606;
+  transition: all 2s;
+}
+
+.left {
+  transform-origin: left;
+}
+
+.right {
+  transform-origin: right;
+}
+
+.doors:hover .left {
+  transform: rotateY(50deg);
+} 
+
+.doors:hover .right {
+  transform: rotateY(-50deg);
+} 
+
+h1 {
+  position: absolute;
+  z-index: -1;
+}
+
+.grid {
+  display: grid;
+  width: 500px;
+  height: 450px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.grid div {
+  width: 250px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(219, 217, 217);
+}
+
+.grid div:hover {
+  filter: brightness(0.5);
+  transition: filter 0.3s ease-out;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+img:hover {
+  transform: scale(1.5);
+  transition: all 1s linear;
+}
+
